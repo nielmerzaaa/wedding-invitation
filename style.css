@@ -1,0 +1,859 @@
+
+/* ==========================================
+   REINIEL & JANINE — WEDDING INVITATION
+   Theme: Elegant Minimalist / Beige & Brown
+========================================== */
+
+
+/* ==========================================
+   1. ROOT VARIABLES
+========================================== */
+
+:root {
+    --ivory: #f5f0e8;
+    --cream: #ebe2d5;
+    --sand: #d1bda5;
+    --taupe: #a78b70;
+    --brown: #725744;
+    --dark: #3f3027;
+    --white: #fffdf9;
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', Arial, sans-serif;
+}
+
+
+/* ==========================================
+   2. GLOBAL STYLES
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--dark);
+    font-family: var(--sans);
+    font-weight: 300;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ==========================================
+   3. PAGE LOADER
+========================================== */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+
+    background: var(--ivory);
+
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 12px;
+
+    transition: .7s;
+}
+
+.loader span {
+    font: 44px var(--serif);
+    letter-spacing: 5px;
+}
+
+.loader i {
+    color: var(--taupe);
+}
+
+.loader small {
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.loader.done {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* ==========================================
+   4. HEADER & NAVIGATION
+========================================== */
+
+header {
+    height: 74px;
+    padding: 0 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 10;
+
+    background: var(--ivory);
+}
+
+.logo {
+    font: 28px var(--serif);
+    letter-spacing: 2px;
+}
+
+.logo i {
+    color: var(--taupe);
+}
+
+nav {
+    display: flex;
+    gap: 36px;
+}
+
+nav a,
+.sound {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+}
+
+.sound {
+    border: 0;
+    background: none;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+#menuBtn {
+    display: none;
+}
+
+
+/* ==========================================
+   5. HERO SECTION
+========================================== */
+
+.hero {
+    height: min(790px, 88vh);
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    background: #88745f;
+    color: white;
+}
+
+.hero-photo,
+.shade {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-photo {
+    background: url('assets/images/hero.jpg') center / cover no-repeat;
+    animation: zoom 18s ease-out both;
+}
+
+.shade {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 26, 20, .55),
+            rgba(35, 26, 20, .12)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(35, 26, 20, .25),
+            transparent 60%
+        );
+}
+
+@keyframes zoom {
+    to {
+        transform: scale(1.08);
+    }
+}
+
+.hero-copy {
+    position: relative;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+    color: var(--taupe);
+}
+
+.hero .eyebrow {
+    color: #e6d7c5;
+}
+
+.hero h1 {
+    font: 400 clamp(70px, 10vw, 130px) / .8 var(--serif);
+    letter-spacing: -3px;
+    margin: 38px 0;
+}
+
+.hero h1 em {
+    color: #e2c9a9;
+}
+
+.rule {
+    height: 1px;
+    width: 52px;
+
+    background: #e5d5c1;
+
+    margin: 0 auto 22px;
+}
+
+.date {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.date b {
+    padding: 0 10px;
+    color: #dfc6a5;
+}
+
+.hero-link {
+    display: inline-block;
+
+    margin-top: 45px;
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid #ffffff99;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.side-note {
+    position: absolute;
+    right: 25px;
+    bottom: 28px;
+
+    writing-mode: vertical-rl;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #e7d9c8;
+}
+
+
+/* ==========================================
+   6. GLOBAL SECTION STYLES
+========================================== */
+
+.section {
+    padding: 110px max(7vw, 24px);
+}
+
+h2 {
+    font: 400 clamp(44px, 6vw, 72px) / .98 var(--serif);
+    letter-spacing: -.8px;
+    margin: 20px 0;
+}
+
+h2 em {
+    color: var(--taupe);
+}
+
+.copy {
+    max-width: 460px;
+
+    margin: 24px auto;
+
+    color: #807366;
+
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* ==========================================
+   7. INVITATION & COUNTDOWN
+========================================== */
+
+.intro {
+    text-align: center;
+    background: var(--white);
+}
+
+.date-lock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    color: var(--brown);
+}
+
+.date-lock span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.date-lock strong {
+    font: 54px var(--serif);
+
+    padding: 0 24px;
+
+    border-inline: 1px solid var(--sand);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+
+    gap: clamp(20px, 5vw, 65px);
+
+    margin-top: 45px;
+}
+
+.countdown div {
+    display: grid;
+    gap: 8px;
+}
+
+.countdown strong {
+    font: 34px var(--serif);
+}
+
+.countdown small {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+    color: var(--taupe);
+}
+
+
+/* ==========================================
+   8. OUR STORY
+========================================== */
+
+.story,
+.dress {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 9vw;
+}
+
+.photo {
+    background-color: #d8cabb;
+    background-position: center;
+    background-size: cover;
+}
+
+.story-photo {
+    min-height: 600px;
+    background-image: url('assets/images/story.jpg');
+}
+
+.story-copy {
+    max-width: 440px;
+}
+
+.story-copy > p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 2.1;
+
+    color: #7c7064;
+
+    margin-top: 28px;
+}
+
+.signature {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    font: italic 27px var(--serif);
+    color: var(--taupe);
+}
+
+
+/* ==========================================
+   9. WEDDING DETAILS
+========================================== */
+
+.details {
+    text-align: center;
+    background: var(--cream);
+}
+
+.detail-grid {
+    max-width: 900px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid #cdbba5;
+}
+
+.detail-grid article {
+    padding: 58px 24px;
+    min-height: 300px;
+}
+
+.detail-grid article + article {
+    border-left: 1px solid #cdbba5;
+}
+
+.detail-grid small {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--taupe);
+}
+
+.detail-grid h3 {
+    font: 40px var(--serif);
+    font-weight: 400;
+    margin: 20px;
+}
+
+.detail-grid p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    line-height: 2;
+}
+
+.detail-grid .muted,
+.muted {
+    color: #8b7d70;
+    font-size: 10px;
+    letter-spacing: 0;
+}
+
+
+/* ==========================================
+   10. PHOTO GALLERY
+========================================== */
+
+.gallery {
+    text-align: center;
+    background: var(--white);
+}
+
+.gallery-grid {
+    max-width: 1050px;
+
+    margin: 48px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 230px 230px;
+
+    gap: 14px;
+}
+
+.g1 {
+    grid-row: span 2;
+    background-image: url('assets/images/gallery-1.jpg');
+}
+
+.g2 {
+    background-image: url('assets/images/gallery-2.jpg');
+}
+
+.g3 {
+    background-image: url('assets/images/gallery-3.jpg');
+}
+
+
+/* ==========================================
+   11. DRESS CODE
+========================================== */
+
+.dress-photo {
+    min-height: 470px;
+    background-image: url('assets/images/dress-code.jpg');
+}
+
+.swatches {
+    display: flex;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.swatches i {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    border: 1px solid #0001;
+}
+
+.swatches i:nth-child(1) {
+    background: #eee5d8;
+}
+
+.swatches i:nth-child(2) {
+    background: #d1bda5;
+}
+
+.swatches i:nth-child(3) {
+    background: #a78b70;
+}
+
+.swatches i:nth-child(4) {
+    background: #725744;
+}
+
+.swatches i:nth-child(5) {
+    background: white;
+}
+
+
+/* ==========================================
+   12. LOCATION
+========================================== */
+
+.location {
+    text-align: center;
+    background: #e6dccf;
+}
+
+.outline {
+    display: inline-block;
+
+    border: 1px solid var(--brown);
+
+    padding: 15px 24px;
+    margin-top: 16px;
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
+
+    transition: .3s;
+}
+
+.outline:hover {
+    background: var(--brown);
+    color: white;
+}
+
+
+/* ==========================================
+   13. RSVP SECTION
+========================================== */
+
+.rsvp {
+    text-align: center;
+
+    background: var(--dark);
+    color: var(--white);
+}
+
+.rsvp h2 em {
+    color: #c4a987;
+}
+
+.rsvp .eyebrow {
+    color: #d6c2a9;
+}
+
+.rsvp .copy {
+    color: #c6b8a8;
+}
+
+.rsvp form {
+    max-width: 440px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+    text-align: left;
+    gap: 12px;
+}
+
+.rsvp form label {
+    font-size: 8px;
+    letter-spacing: 1.8px;
+
+    color: #d3c0aa;
+
+    margin-top: 12px;
+}
+
+.rsvp form input,
+.rsvp form select,
+.rsvp form textarea {
+    width: 100%;
+
+    padding: 13px 2px;
+
+    border: 0;
+    border-bottom: 1px solid #8d7968;
+
+    background: transparent;
+    color: white;
+
+    border-radius: 0;
+    outline: none;
+}
+
+.rsvp form input:focus,
+.rsvp form select:focus,
+.rsvp form textarea:focus {
+    border-bottom-color: #d6c2a9;
+}
+
+.rsvp form select option {
+    color: #33271f;
+    background: var(--white);
+}
+
+.rsvp form input::placeholder,
+.rsvp form textarea::placeholder {
+    color: #b8a99a;
+}
+
+.rsvp form textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.7;
+}
+
+.submit {
+    padding: 16px;
+
+    border: 1px solid #d6c2a9;
+
+    background: #d6c2a9;
+    color: var(--dark);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.submit:hover {
+    background: transparent;
+    color: #d6c2a9;
+}
+
+.submit:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.form-note {
+    font-size: 9px;
+    line-height: 1.7;
+    color: #b8a99a;
+}
+
+
+/* ==========================================
+   14. CLOSING SECTION
+========================================== */
+
+.closing {
+    text-align: center;
+    background: var(--white);
+}
+
+.closing > small {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.closing .signature {
+    font-size: 28px;
+}
+
+
+/* ==========================================
+   15. FOOTER
+========================================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px 6vw;
+
+    background: var(--ivory);
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #8b7968;
+}
+
+
+/* ==========================================
+   16. SCROLL REVEAL ANIMATION
+========================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity .9s,
+        transform .9s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ==========================================
+   17. RESPONSIVE MOBILE DESIGN
+========================================== */
+
+@media (max-width: 760px) {
+
+    header {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    #menuBtn {
+        display: block;
+
+        margin-left: auto;
+        margin-right: 15px;
+
+        border: 0;
+        background: none;
+
+        font-size: 20px;
+        color: var(--brown);
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+        right: 0;
+
+        background: var(--ivory);
+
+        padding: 24px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .sound span {
+        display: none;
+    }
+
+    .hero {
+        height: 82svh;
+        min-height: 590px;
+    }
+
+    .hero h1 {
+        font-size: clamp(66px, 16vw, 94px);
+    }
+
+    .section {
+        padding: 78px 24px;
+    }
+
+    .story,
+    .dress {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-photo {
+        min-height: 430px;
+    }
+
+    .dress-photo {
+        min-height: 340px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid article + article {
+        border-left: 0;
+        border-top: 1px solid #cdbba5;
+    }
+
+    .gallery-grid {
+        grid-template-rows: 210px 160px;
+        gap: 9px;
+    }
+
+    .countdown {
+        gap: 17px;
+    }
+
+    .countdown strong {
+        font-size: 28px;
+    }
+
+    .countdown small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+}
+
+
+/* ==========================================
+   18. ACCESSIBILITY / REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}
