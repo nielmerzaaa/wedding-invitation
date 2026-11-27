@@ -1,7 +1,4 @@
 
-// ==========================================
-// WEDDING COUNTDOWN
-// ==========================================
 
 const weddingDate = new Date(2026, 11, 18, 0, 0, 0);
 
@@ -25,9 +22,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-// ==========================================
-// SCROLL REVEAL ANIMATIONS
-// ==========================================
+
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -43,9 +38,7 @@ document.querySelectorAll('.reveal').forEach(el => {
 });
 
 
-// ==========================================
-// MOBILE NAVIGATION
-// ==========================================
+
 
 const menu = document.getElementById('menuBtn');
 const nav = document.getElementById('nav');
@@ -63,9 +56,7 @@ if (menu && nav) {
 }
 
 
-// ==========================================
-// BACKGROUND WEDDING MUSIC
-// ==========================================
+
 
 const music = document.getElementById('music');
 const sound = document.getElementById('sound');
@@ -105,7 +96,7 @@ if (music && sound) {
         }
     });
 
-    // Attempt autoplay when website loads
+
     startWeddingMusic();
 
 
@@ -115,15 +106,12 @@ if (music && sound) {
         }
     }, { once: true });
 
-    // Keep button synchronized with audio state
+
     music.addEventListener('play', updateSoundButton);
     music.addEventListener('pause', updateSoundButton);
 }
 
 
-// ==========================================
-// RSVP FORM
-// ==========================================
 
 
 const rsvpForm = document.getElementById('rsvpForm');

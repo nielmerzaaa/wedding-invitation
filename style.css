@@ -1,14 +1,4 @@
 
-/* ==========================================
-   REINIEL & JANINE — WEDDING INVITATION
-   Theme: Elegant Minimalist / Beige & Brown
-========================================== */
-
-
-/* ==========================================
-   1. ROOT VARIABLES
-========================================== */
-
 :root {
     --ivory: #f5f0e8;
     --cream: #ebe2d5;
@@ -23,9 +13,6 @@
 }
 
 
-/* ==========================================
-   2. GLOBAL STYLES
-========================================== */
 
 * {
     box-sizing: border-box;
@@ -56,9 +43,6 @@ textarea {
 }
 
 
-/* ==========================================
-   3. PAGE LOADER
-========================================== */
 
 .loader {
     position: fixed;
@@ -95,9 +79,6 @@ textarea {
 }
 
 
-/* ==========================================
-   4. HEADER & NAVIGATION
-========================================== */
 
 header {
     height: 74px;
@@ -145,9 +126,6 @@ nav a,
 }
 
 
-/* ==========================================
-   5. HERO SECTION
-========================================== */
 
 .hero {
     height: min(790px, 88vh);
@@ -170,7 +148,7 @@ nav a,
 }
 
 .hero-photo {
-    background: url('assets/images/hero.jpg') center / cover no-repeat;
+    background: url('assets/images/test.jpg') center / cover no-repeat;
     animation: zoom 18s ease-out both;
 }
 
@@ -529,11 +507,6 @@ h2 em {
 }
 
 
-
-/* ==========================================
-   12. LOCATION
-========================================== */
-
 .location {
     text-align: center;
     background: #e6dccf;
@@ -558,10 +531,6 @@ h2 em {
     color: white;
 }
 
-
-/* ==========================================
-   13. RSVP SECTION
-========================================== */
 
 .rsvp {
     text-align: center;
@@ -675,10 +644,6 @@ h2 em {
 }
 
 
-/* ==========================================
-   14. CLOSING SECTION
-========================================== */
-
 .closing {
     text-align: center;
     background: var(--white);
@@ -693,10 +658,6 @@ h2 em {
     font-size: 28px;
 }
 
-
-/* ==========================================
-   15. FOOTER
-========================================== */
 
 footer {
     display: flex;
@@ -713,9 +674,7 @@ footer {
 }
 
 
-/* ==========================================
-   16. SCROLL REVEAL ANIMATION
-========================================== */
+
 
 .reveal {
     opacity: 0;
@@ -732,9 +691,6 @@ footer {
 }
 
 
-/* ==========================================
-   17. RESPONSIVE MOBILE DESIGN
-========================================== */
 
 @media (max-width: 760px) {
 
@@ -838,10 +794,6 @@ footer {
 
 }
 
-
-/* ==========================================
-   18. ACCESSIBILITY / REDUCED MOTION
-========================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
